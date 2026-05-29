@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:#fff}
+  .wrap{padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-display);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;border:none;cursor:pointer;text-decoration:none;line-height:1}
+  .btn-lg{font-size:17px;padding:17px 34px}
+  .btn-primary{background:var(--accent);color:var(--fg);box-shadow:0 4px 14px oklch(78% 0.19 82 / 0.35)}
+  .btn-danger{background:var(--danger);color:#fff;box-shadow:0 4px 14px oklch(54% 0.20 25 / 0.35)}
+  .btn-secondary{background:transparent;color:var(--fg);border:2px solid var(--border)}
+  svg{width:18px;height:18px}
+  .lab{flex-basis:100%;font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+</style></head><body>
+<div class="wrap">
+  <a class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586"/></svg>Demander un devis gratuit</a>
+  <a class="btn btn-danger btn-lg"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>Urgence — Appeler</a>
+  <a class="btn btn-primary">En savoir plus</a>
+  <a class="btn btn-secondary">Annuler</a>
+  <span class="lab">.btn-primary · .btn-danger · .btn-secondary  ·  +.btn-lg variant</span>
+</div>
+</body></html>

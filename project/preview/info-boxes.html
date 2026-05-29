@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:#fff}
+  .wrap{padding:24px;display:flex;flex-direction:column;gap:14px}
+  .info{border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start}
+  .info-accent{background:var(--accent-light);border-left:3px solid var(--accent-dark)}
+  .info-danger{background:oklch(97% 0.015 25);border-left:3px solid var(--danger)}
+  .info svg{width:22px;height:22px;flex-shrink:0;margin-top:2px}
+  .info-accent svg{color:var(--accent-dark)}
+  .info-danger svg{color:var(--danger)}
+  .title{font-family:var(--font-display);font-weight:700;font-size:14px;margin-bottom:3px;color:var(--fg)}
+  .text{font-size:14px;color:var(--muted);line-height:1.55}
+</style></head><body>
+<div class="wrap">
+  <div class="info info-accent">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
+    <div><div class="title">Mesures préventives incluses</div><div class="text">Conseils gratuits pour éviter une nouvelle infestation — colmatage des entrées, stockage des aliments.</div></div>
+  </div>
+  <div class="info info-danger">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+    <div><div class="title">Infestation déclarée ?</div><div class="text">Une présence de punaises de lit doit être traitée sous 48h pour éviter la prolifération.</div></div>
+  </div>
+</div>
+</body></html>

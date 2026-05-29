@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:oklch(99% 0.003 90)}
+  .wrap{padding:28px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .demo{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{width:96px;height:70px;border-radius:14px;background:#fff}
+  .lab{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:center;line-height:1.3}
+  .s1{box-shadow:0 1px 4px oklch(0% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.05)}
+  .s2{box-shadow:0 4px 12px oklch(0% 0 0 / 0.08), 0 8px 24px oklch(0% 0 0 / 0.06)}
+  .s3{box-shadow:0 8px 24px oklch(0% 0 0 / 0.10), 0 16px 48px oklch(0% 0 0 / 0.08)}
+  .gA{background:#fec503;box-shadow:0 4px 14px oklch(78% 0.19 82 / 0.35)}
+  .gR{background:oklch(54% 0.20 25);box-shadow:0 4px 14px oklch(54% 0.20 25 / 0.35)}
+</style></head><body>
+<div class="wrap">
+  <div class="demo"><div class="box s1"></div><span class="lab">--shadow-sm<br>card rest</span></div>
+  <div class="demo"><div class="box s2"></div><span class="lab">--shadow<br>card hover</span></div>
+  <div class="demo"><div class="box s3"></div><span class="lab">--shadow-lg<br>heaviest</span></div>
+  <div class="demo"><div class="box gA"></div><span class="lab">amber glow<br>primary CTA</span></div>
+  <div class="demo"><div class="box gR"></div><span class="lab">danger glow<br>red CTA</span></div>
+</div>
+</body></html>

@@ -1,0 +1,193 @@
+/* ============================================================
+   SOS Nuisibles 45 — Design tokens & semantic styles
+   ============================================================
+   Source: _source/main.css + _source/brand-spec.md
+   Spec posture: "Fond blanc propre, charbon profond,
+                  ambre doré signature, typographie robuste
+                  Montserrat — PME de proximité sérieuse avec
+                  un soupçon de chaleur."
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* ── Brand palette ─────────────────────────────────────── */
+  --brand-amber:        oklch(78% 0.19 82);   /* #fec503 — signature wasp amber */
+  --brand-amber-dark:   oklch(58% 0.18 70);   /* deeper amber, hover + text-on-light */
+  --brand-amber-light:  oklch(95% 0.06 85);   /* tinted amber surface */
+  --brand-charcoal:     oklch(14% 0.018 60);  /* #131313 — wasp body */
+  --brand-cream:        oklch(99% 0.003 90);  /* #f4f4f4-ish warm white */
+
+  /* ── Semantic colors ──────────────────────────────────── */
+  --bg:           oklch(99% 0.003 90);  /* page background, warm white */
+  --surface:      oklch(100% 0 0);      /* pure white for cards */
+  --fg:           oklch(14% 0.018 60);  /* body text, hero darkness */
+  --muted:        oklch(52% 0.015 60);  /* secondary text */
+  --border:       oklch(88% 0.008 85);  /* light golden-neutral border */
+  --accent:       var(--brand-amber);
+  --accent-dark:  var(--brand-amber-dark);
+  --accent-light: var(--brand-amber-light);
+
+  /* Status colors */
+  --danger:       oklch(54% 0.20 25);   /* urgency red — 24/7 banner, phone */
+  --danger-dark:  oklch(40% 0.20 25);   /* hover */
+  --success:      oklch(56% 0.18 148);  /* "Disponible", confirmations */
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  /* Weight tokens */
+  --w-regular:   400;
+  --w-medium:    500;
+  --w-semibold:  600;
+  --w-bold:      700;
+  --w-extrabold: 800;
+  --w-black:     900;
+
+  /* Type scale (px, used with clamp() across the site) */
+  --t-display:   clamp(34px, 5.5vw, 60px);   /* hero H1 */
+  --t-h1:        clamp(32px, 5.5vw, 56px);   /* page H1 */
+  --t-h2:        clamp(26px, 4vw, 40px);     /* section title */
+  --t-h3:        20px;                       /* card titles */
+  --t-h4:        17px;                       /* sub-card titles */
+  --t-lead:      clamp(15px, 2vw, 17px);     /* section lead */
+  --t-body:      15px;                       /* body / form input */
+  --t-small:     14px;                       /* secondary body */
+  --t-caption:   13px;                       /* labels, tags */
+  --t-micro:     11px;                       /* eyebrow labels */
+
+  /* Letter-spacing for uppercase eyebrows */
+  --ls-eyebrow: 0.12em;
+  --ls-label:   0.06em;
+
+  /* ── Radii ────────────────────────────────────────────── */
+  --radius-sm: 8px;     /* buttons, inputs, tags */
+  --radius:    14px;    /* default cards */
+  --radius-lg: 20px;    /* CTA banners, form cards */
+  --radius-pill: 100px; /* badges, pills */
+
+  /* ── Shadows ──────────────────────────────────────────── */
+  --shadow-sm: 0 1px 4px oklch(0% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.05);
+  --shadow:    0 4px 12px oklch(0% 0 0 / 0.08), 0 8px 24px oklch(0% 0 0 / 0.06);
+  --shadow-lg: 0 8px 24px oklch(0% 0 0 / 0.10), 0 16px 48px oklch(0% 0 0 / 0.08);
+
+  /* Colored CTA glow */
+  --glow-amber:  0 4px 14px oklch(78% 0.19 82 / 0.35);
+  --glow-danger: 0 4px 14px oklch(54% 0.20 25 / 0.35);
+
+  /* ── Layout rhythm ────────────────────────────────────── */
+  --max-w:      1200px;
+  --section-py: clamp(64px, 8vw, 112px);
+  --section-px: clamp(20px, 5vw, 48px);
+
+  /* Spacing scale (used as gap, padding) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Motion ───────────────────────────────────────────── */
+  --t-fast: 0.15s;   /* press / micro */
+  --t-base: 0.2s;    /* default UI */
+  --t-slow: 0.25s;   /* card hover */
+  --ease:   ease;
+}
+
+/* ============================================================
+   Semantic typography — apply via class on top of base body
+   ============================================================ */
+
+.t-display {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--t-display);
+  line-height: 1.08;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+.t-display em { font-style: normal; color: var(--accent); }
+
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-size: var(--t-h1);
+  line-height: 1.1;
+  color: var(--fg);
+}
+
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--w-extrabold);
+  font-size: var(--t-h2);
+  line-height: 1.15;
+  color: var(--fg);
+}
+
+.t-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--w-extrabold);
+  font-size: var(--t-h3);
+  line-height: 1.3;
+  color: var(--fg);
+}
+
+.t-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: var(--t-h4);
+  line-height: 1.35;
+  color: var(--fg);
+}
+
+.t-lead {
+  font-family: var(--font-body);
+  font-size: var(--t-lead);
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: 1.65;
+  color: var(--fg);
+}
+
+.t-small {
+  font-family: var(--font-body);
+  font-size: var(--t-small);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.t-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: var(--t-micro);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+.t-label {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: 12px;
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.t-mono-num {
+  font-family: var(--font-display);
+  font-weight: var(--w-black);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}

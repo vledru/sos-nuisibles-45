@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:#fff}
+  .wrap{padding:24px 28px;display:flex;flex-direction:column;gap:18px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .grp{display:flex;flex-direction:column;gap:6px}
+  label{font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--fg)}
+  .req{color:var(--danger);margin-left:2px}
+  .inp,.sel,.txt{font-family:var(--font-body);font-size:15px;color:var(--fg);background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;width:100%;outline:none;-webkit-appearance:none;appearance:none}
+  .inp.focus{border-color:var(--accent-dark);box-shadow:0 0 0 3px oklch(78% 0.19 82 / 0.18)}
+  .urg{display:flex;align-items:flex-start;gap:12px;background:oklch(54% 0.20 25 / 0.06);border:1.5px solid oklch(54% 0.20 25 / 0.25);border-radius:8px;padding:14px 16px}
+  .urg input{width:18px;height:18px;accent-color:var(--danger);margin-top:1px}
+  .urg span{font-size:14px;color:var(--fg);line-height:1.5}
+  .urg strong{color:var(--danger)}
+</style></head><body>
+<div class="wrap">
+  <div class="row">
+    <div class="grp"><label>Nom <span class="req">*</span></label><input class="inp" value="Jean Martin"></div>
+    <div class="grp"><label>Téléphone <span class="req">*</span></label><input class="inp focus" value="06 12 34 56 78"></div>
+  </div>
+  <div class="grp"><label>Type de nuisible</label><select class="sel"><option>Rongeurs (rats, souris, mulots)</option></select></div>
+  <div class="urg"><input type="checkbox" checked><span><strong>Urgence</strong> — Intervention sous 2h dans le Loiret</span></div>
+</div>
+</body></html>

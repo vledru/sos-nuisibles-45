@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:20px}
+  .swatch{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff}
+  .chip{height:80px;display:flex;align-items:flex-end;padding:10px 12px;font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+  .meta{padding:10px 12px;display:flex;flex-direction:column;gap:2px;font-family:var(--font-display)}
+  .name{font-weight:700;font-size:13px;color:var(--fg)}
+  .hex{font-weight:500;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+</style>
+</head><body>
+<div class="grid">
+  <div class="swatch"><div class="chip" style="background:#fec503;color:#131313">Amber</div><div class="meta"><span class="name">Brand Amber</span><span class="hex">#FEC503 · --brand-amber</span></div></div>
+  <div class="swatch"><div class="chip" style="background:oklch(58% 0.18 70);color:#fff">Amber dark</div><div class="meta"><span class="name">Amber dark</span><span class="hex">oklch(58% .18 70) · --accent-dark</span></div></div>
+  <div class="swatch"><div class="chip" style="background:oklch(95% 0.06 85);color:oklch(58% 0.18 70)">Amber light</div><div class="meta"><span class="name">Amber light</span><span class="hex">oklch(95% .06 85) · --accent-light</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#131313;color:#fec503">Charcoal</div><div class="meta"><span class="name">Brand Charcoal</span><span class="hex">#131313 · --fg</span></div></div>
+  <div class="swatch"><div class="chip" style="background:oklch(99% 0.003 90);color:#131313;border-bottom:1px solid var(--border)">Cream BG</div><div class="meta"><span class="name">Page background</span><span class="hex">oklch(99% .003 90) · --bg</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#fff;color:#131313;border-bottom:1px solid var(--border)">Surface</div><div class="meta"><span class="name">Card surface</span><span class="hex">#FFFFFF · --surface</span></div></div>
+</div>
+</body></html>

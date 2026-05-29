@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px}
+  .sw{border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#fff;display:flex;flex-direction:column}
+  .chip{height:70px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:13px}
+  .meta{padding:10px 12px;display:flex;flex-direction:column;gap:2px}
+  .name{font-family:var(--font-display);font-weight:700;font-size:13px;color:var(--fg)}
+  .hex{font-family:var(--font-display);font-weight:500;font-size:11px;color:var(--muted)}
+</style>
+</head><body>
+<div class="grid">
+  <div class="sw"><div class="chip" style="background:oklch(54% 0.20 25);color:#fff">Urgence</div><div class="meta"><span class="name">--danger</span><span class="hex">24/7 banner, phone CTA</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(40% 0.20 25);color:#fff">Hover</div><div class="meta"><span class="name">--danger-dark</span><span class="hex">red button hover</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(56% 0.18 148);color:#fff">Succès</div><div class="meta"><span class="name">--success</span><span class="hex">"Disponible", form OK</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(88% 0.008 85);color:var(--fg)">Border</div><div class="meta"><span class="name">--border</span><span class="hex">card hairline, dividers</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(52% 0.015 60);color:#fff">Muted</div><div class="meta"><span class="name">--muted</span><span class="hex">secondary text</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(97% 0.015 25);color:oklch(54% 0.20 25)">Danger tint</div><div class="meta"><span class="name">badge-danger bg</span><span class="hex">oklch(97% .015 25)</span></div></div>
+  <div class="sw"><div class="chip" style="background:oklch(97% 0.015 148);color:oklch(46% 0.16 148)">Success tint</div><div class="meta"><span class="name">badge-success bg</span><span class="hex">oklch(97% .015 148)</span></div></div>
+  <div class="sw"><div class="chip" style="background:#fff;color:#131313;border-bottom:1px solid var(--border)">#FFF</div><div class="meta"><span class="name">white-on-dark</span><span class="hex">hero text, btn-danger fg</span></div></div>
+</div>
+</body></html>

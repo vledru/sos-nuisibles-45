@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:#fff}
+  .wrap{padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .demo{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{background:#fec503}
+  .lab{font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .r-sm{width:120px;height:60px;border-radius:8px}
+  .r-md{width:120px;height:60px;border-radius:14px}
+  .r-lg{width:120px;height:60px;border-radius:20px}
+  .r-pill{width:120px;height:32px;border-radius:100px}
+</style></head><body>
+<div class="wrap">
+  <div class="demo"><div class="box r-sm"></div><span class="lab">8px · --radius-sm · btn/input/tag</span></div>
+  <div class="demo"><div class="box r-md"></div><span class="lab">14px · --radius · card</span></div>
+  <div class="demo"><div class="box r-lg"></div><span class="lab">20px · --radius-lg · CTA banner</span></div>
+  <div class="demo"><div class="box r-pill"></div><span class="lab">100px · pill · badge / chip</span></div>
+</div>
+</body></html>

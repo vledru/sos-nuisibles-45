@@ -1,0 +1,674 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Devis Gratuit — SOS Nuisibles 45</title>
+  <meta name="description" content="Demandez un devis gratuit à SOS Nuisibles 45, expert en dératisation, désinsectisation et punaises de lit dans le Loiret. Réponse sous 2h. Urgence 24h/24 : 02 46 91 56 20.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:           oklch(99% 0.003 90);
+      --surface:      oklch(100% 0 0);
+      --fg:           oklch(14% 0.018 60);
+      --muted:        oklch(52% 0.015 60);
+      --border:       oklch(88% 0.008 85);
+      --accent:       oklch(78% 0.19 82);
+      --accent-dark:  oklch(58% 0.18 70);
+      --accent-light: oklch(95% 0.06 85);
+      --danger:       oklch(54% 0.20 25);
+      --danger-dark:  oklch(40% 0.20 25);
+      --success:      oklch(56% 0.18 148);
+      --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-body:    -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --radius-sm:   8px;
+      --radius:      14px;
+      --radius-lg:   20px;
+      --shadow-sm:   0 1px 4px oklch(0% 0 0 / 0.06), 0 2px 8px oklch(0% 0 0 / 0.05);
+      --shadow:      0 4px 12px oklch(0% 0 0 / 0.08), 0 8px 24px oklch(0% 0 0 / 0.06);
+      --max-w: 1200px;
+      --section-py: clamp(64px, 8vw, 112px);
+      --section-px: clamp(20px, 5vw, 48px);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--fg); line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .emergency-bar {
+      background: var(--danger); color: #fff;
+      text-align: center; padding: 10px var(--section-px);
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(12px, 1.5vw, 14px); letter-spacing: 0.02em;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .emergency-bar a { color: #fff; text-decoration: underline; font-weight: 800; }
+    .pulse-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff; flex-shrink: 0;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 0 var(--section-px); height: 72px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .site-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; overflow: hidden; height: 68px; }
+    .site-logo img { height: 96px; width: auto; flex-shrink: 0; margin-top: -14px; }
+    .site-nav { display: flex; align-items: center; gap: 8px; }
+    .site-nav a {
+      font-family: var(--font-display); font-weight: 600; font-size: 14px;
+      color: var(--fg); padding: 8px 14px; border-radius: var(--radius-sm);
+      transition: color 0.2s, background 0.2s;
+    }
+    .site-nav a:hover, .site-nav a.active { color: var(--accent-dark); background: var(--accent-light); }
+    .header-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .btn-phone {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--danger); color: #fff;
+      font-family: var(--font-display); font-weight: 800; font-size: 15px;
+      padding: 10px 18px; border-radius: var(--radius-sm);
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-phone:hover { background: var(--danger-dark); transform: translateY(-1px); }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px; padding: 8px; cursor: pointer;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--fg); border-radius: 2px;
+      transition: transform 0.25s, opacity 0.25s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-display); font-weight: 700; font-size: 15px;
+      padding: 14px 28px; border-radius: var(--radius-sm);
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+      cursor: pointer; border: none; text-decoration: none; line-height: 1;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: var(--fg); box-shadow: 0 4px 14px oklch(78% 0.19 82 / 0.35); }
+    .btn-primary:hover { background: var(--accent-dark); color: #fff; }
+
+    .section { padding: var(--section-py) var(--section-px); }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+    .section-label {
+      display: inline-block; font-family: var(--font-display); font-weight: 700;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent-dark); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: clamp(22px, 3vw, 32px); line-height: 1.15; color: var(--fg); margin-bottom: 32px;
+    }
+
+    .page-hero {
+      background: linear-gradient(135deg, oklch(14% 0.018 60) 0%, oklch(20% 0.025 65) 60%, oklch(16% 0.020 62) 100%);
+      padding: clamp(56px, 7vw, 96px) var(--section-px);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 85% 50%, oklch(78% 0.19 82 / 0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 80%, oklch(54% 0.20 25 / 0.07) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .page-hero-inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; }
+    .page-hero-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: oklch(78% 0.19 82 / 0.15); border: 1px solid oklch(78% 0.19 82 / 0.40);
+      color: var(--accent); padding: 6px 14px; border-radius: 100px;
+      font-family: var(--font-display); font-weight: 700; font-size: 12px;
+      letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 18px;
+    }
+    .page-hero-title {
+      font-family: var(--font-display); font-weight: 900;
+      font-size: clamp(30px, 4.5vw, 52px); line-height: 1.1; color: #fff; margin-bottom: 14px;
+    }
+    .page-hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px); color: oklch(85% 0.01 80);
+      max-width: 560px; line-height: 1.65;
+    }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 380px;
+      gap: 48px; align-items: start;
+    }
+    .form-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px 36px; box-shadow: var(--shadow);
+    }
+    .form-card-title {
+      font-family: var(--font-display); font-weight: 800;
+      font-size: 22px; color: var(--fg); margin-bottom: 6px;
+    }
+    .form-card-sub { font-size: 14px; color: var(--muted); margin-bottom: 32px; line-height: 1.6; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+    .form-label {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: 13px; color: var(--fg); letter-spacing: 0.01em;
+    }
+    .form-label .required { color: var(--danger); margin-left: 2px; }
+    .form-input, .form-select, .form-textarea {
+      font-family: var(--font-body); font-size: 15px;
+      color: var(--fg); background: var(--bg);
+      border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+      padding: 12px 14px; transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none; -webkit-appearance: none; appearance: none; width: 100%;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--accent-dark); box-shadow: 0 0 0 3px oklch(78% 0.19 82 / 0.18);
+    }
+    .form-input.error, .form-select.error, .form-textarea.error {
+      border-color: var(--danger); box-shadow: 0 0 0 3px oklch(54% 0.20 25 / 0.15);
+    }
+    .form-error-msg { font-size: 12px; color: var(--danger); display: none; margin-top: 2px; }
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 24 24' stroke='%23888' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center; padding-right: 40px;
+    }
+    .form-textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+
+    .urgency-check-wrap {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: oklch(54% 0.20 25 / 0.06);
+      border: 1.5px solid oklch(54% 0.20 25 / 0.25);
+      border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 24px;
+    }
+    .urgency-check-wrap input[type="checkbox"] {
+      width: 18px; height: 18px; accent-color: var(--danger); margin-top: 1px; flex-shrink: 0;
+    }
+    .urgency-check-label { font-size: 14px; color: var(--fg); line-height: 1.5; }
+    .urgency-check-label strong { color: var(--danger); }
+
+    .btn-submit {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; padding: 16px 28px;
+      background: var(--accent); color: var(--fg);
+      font-family: var(--font-display); font-weight: 800; font-size: 16px;
+      border-radius: var(--radius-sm); border: none; cursor: pointer;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px oklch(78% 0.19 82 / 0.35); margin-top: 28px;
+    }
+    .btn-submit:hover { background: var(--accent-dark); color: #fff; }
+    .btn-submit:active { transform: scale(0.98); }
+    .form-privacy { text-align: center; font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+
+    .form-success { display: none; text-align: center; padding: 48px 32px; }
+    .form-success-icon {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: oklch(56% 0.18 148 / 0.12);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
+    }
+    .form-success-title { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: var(--fg); margin-bottom: 10px; }
+    .form-success-msg { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+
+    .sidebar-block {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      box-shadow: var(--shadow-sm); margin-bottom: 20px;
+    }
+    .sidebar-block-title { font-family: var(--font-display); font-weight: 800; font-size: 16px; color: var(--fg); margin-bottom: 16px; }
+    .contact-phone-big {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--danger); color: #fff;
+      border-radius: var(--radius-sm); padding: 16px 18px;
+      font-family: var(--font-display); font-weight: 800; font-size: 20px;
+      text-decoration: none; transition: background 0.2s; margin-bottom: 10px;
+    }
+    .contact-phone-big:hover { background: var(--danger-dark); }
+    .contact-phone-sub { font-size: 12px; color: var(--muted); text-align: center; }
+    .contact-info-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+    .contact-info-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-info-icon { width: 36px; height: 36px; border-radius: var(--radius-sm); background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-info-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 3px; }
+    .contact-info-value { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--fg); }
+    .zone-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .zone-tag { background: var(--accent-light); color: var(--accent-dark); border-radius: 100px; padding: 4px 12px; font-family: var(--font-display); font-weight: 700; font-size: 12px; }
+    .sidebar-certif { display: flex; align-items: center; gap: 12px; background: oklch(56% 0.18 148 / 0.08); border: 1px solid oklch(56% 0.18 148 / 0.25); border-radius: var(--radius-sm); padding: 14px 16px; }
+    .sidebar-certif-icon { font-size: 28px; flex-shrink: 0; }
+    .sidebar-certif-text { font-size: 13px; color: var(--fg); line-height: 1.5; }
+    .sidebar-certif-text strong { color: oklch(46% 0.16 148); }
+
+    .faq-section { margin-top: 72px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-btn { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 0; gap: 16px; font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--fg); cursor: pointer; background: none; border: none; text-align: left; }
+    .faq-btn:hover { color: var(--accent-dark); }
+    .faq-chevron { width: 18px; height: 18px; flex-shrink: 0; transition: transform 0.25s; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body { font-size: 14px; color: var(--muted); line-height: 1.7; overflow: hidden; max-height: 0; transition: max-height 0.3s ease, padding 0.2s; }
+    .faq-item.open .faq-body { max-height: 300px; padding-bottom: 16px; }
+
+    .site-footer { background: var(--fg); color: rgba(255,255,255,0.8); padding: clamp(48px, 7vw, 80px) var(--section-px) 32px; }
+    .footer-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand-logo { height: 52px; width: auto; margin-bottom: 16px; }
+    .footer-brand-tagline { font-size: 14px; line-height: 1.7; opacity: 0.7; margin-bottom: 24px; }
+    .footer-phone { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--accent); display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+    .footer-col-title { font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col li a { font-size: 14px; color: rgba(255,255,255,0.7); transition: color 0.2s; }
+    .footer-col li a:hover { color: var(--accent); }
+    .footer-bottom { max-width: var(--max-w); margin: 0 auto; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; opacity: 0.5; }
+
+    @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+    @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } .form-card { padding: 28px 20px; } }
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .site-nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--surface); flex-direction: column; padding: 16px var(--section-px); border-bottom: 1px solid var(--border); box-shadow: var(--shadow); gap: 4px; }
+      .site-nav.open { display: flex; }
+      .site-nav a { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 15px; }
+      .nav-toggle { display: flex; }
+      .header-inner { position: relative; }
+    }
+    @media (max-width: 500px) { .contact-phone-big { font-size: 17px; } .emergency-bar { font-size: 12px; gap: 8px; } }
+  </style>
+</head>
+<body>
+
+  <div class="emergency-bar" role="banner">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>Urgence 24h/24 &amp; 7j/7 — Intervention rapide dans le Loiret</span>
+    <a href="tel:+33246915620">02 46 91 56 20</a>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo" aria-label="SOS Nuisibles 45 - Accueil">
+        <img src="mpo5f0px-sos-nuisibles-45-logo-v1.png" alt="SOS Nuisibles 45" height="48">
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="deratisation.html">Dératisation</a>
+        <a href="desinsectisation.html">Désinsectisation</a>
+        <a href="punaises-de-lit.html">Punaises de lit</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+33246915620" class="btn-phone" aria-label="Appeler le 02 46 91 56 20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          02 46 91 56 20
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero" aria-labelledby="contact-hero-title">
+    <div class="page-hero-inner">
+      <div class="page-hero-label">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        Contact &amp; Devis
+      </div>
+      <h1 class="page-hero-title" id="contact-hero-title">Devis gratuit,<br>réponse sous 2 heures</h1>
+      <p class="page-hero-sub">Décrivez votre problème et notre équipe vous recontacte rapidement avec une estimation claire et sans engagement. Pour une urgence, appelez directement le <strong style="color:var(--accent)">02 46 91 56 20</strong>.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Formulaire de contact et devis">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div>
+          <div class="form-card">
+            <h2 class="form-card-title">Demande de devis gratuit</h2>
+            <p class="form-card-sub">Tous les champs marqués <span style="color:var(--danger)">*</span> sont obligatoires. Nous ne transmettrons jamais vos données à des tiers.</p>
+
+            <form id="devis-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="prenom">Prénom <span class="required">*</span></label>
+                  <input class="form-input" type="text" id="prenom" name="prenom" placeholder="Jean" autocomplete="given-name" required>
+                  <span class="form-error-msg" id="prenom-err">Veuillez saisir votre prénom.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="nom">Nom <span class="required">*</span></label>
+                  <input class="form-input" type="text" id="nom" name="nom" placeholder="Dupont" autocomplete="family-name" required>
+                  <span class="form-error-msg" id="nom-err">Veuillez saisir votre nom.</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="telephone">Téléphone <span class="required">*</span></label>
+                  <input class="form-input" type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX" autocomplete="tel" required>
+                  <span class="form-error-msg" id="telephone-err">Veuillez saisir un numéro de téléphone valide.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">E-mail</label>
+                  <input class="form-input" type="email" id="email" name="email" placeholder="jean.dupont@exemple.fr" autocomplete="email">
+                  <span class="form-error-msg" id="email-err">Adresse e-mail invalide.</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="adresse">Adresse d'intervention <span class="required">*</span></label>
+                <input class="form-input" type="text" id="adresse" name="adresse" placeholder="Numéro et nom de rue" autocomplete="street-address" required>
+                <span class="form-error-msg" id="adresse-err">Veuillez saisir l'adresse d'intervention.</span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="ville">Ville <span class="required">*</span></label>
+                  <input class="form-input" type="text" id="ville" name="ville" placeholder="Orléans" autocomplete="address-level2" required>
+                  <span class="form-error-msg" id="ville-err">Veuillez saisir la ville.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="codepostal">Code postal <span class="required">*</span></label>
+                  <input class="form-input" type="text" id="codepostal" name="codepostal" placeholder="45000" autocomplete="postal-code" inputmode="numeric" maxlength="5" required>
+                  <span class="form-error-msg" id="codepostal-err">Code postal invalide (ex : 45000).</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="service">Type de prestation <span class="required">*</span></label>
+                <select class="form-select" id="service" name="service" required>
+                  <option value="" disabled selected>Sélectionnez un service…</option>
+                  <option value="deratisation">Dératisation (rats, souris, ragondins…)</option>
+                  <option value="desinsectisation">Désinsectisation (cafards, guêpes, fourmis…)</option>
+                  <option value="punaises">Traitement punaises de lit</option>
+                  <option value="autre">Autre nuisible — je précise dans le message</option>
+                </select>
+                <span class="form-error-msg" id="service-err">Veuillez sélectionner un type de prestation.</span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="bien">Type de bien</label>
+                <select class="form-select" id="bien" name="bien">
+                  <option value="" disabled selected>Sélectionnez le type de bien…</option>
+                  <option value="appartement">Appartement</option>
+                  <option value="maison">Maison individuelle</option>
+                  <option value="commerce">Commerce / boutique</option>
+                  <option value="bureau">Bureau / espace de travail</option>
+                  <option value="entrepot">Entrepôt / local industriel</option>
+                  <option value="restaurant">Restaurant / hôtel</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Décrivez le problème <span class="required">*</span></label>
+                <textarea class="form-textarea" id="message" name="message" placeholder="Ex : Présence de rats dans la cave depuis 2 semaines, traces de passages visibles… Plus vous êtes précis, plus notre devis sera pertinent." required></textarea>
+                <span class="form-error-msg" id="message-err">Veuillez décrire le problème rencontré.</span>
+              </div>
+              <div class="urgency-check-wrap">
+                <input type="checkbox" id="urgence" name="urgence" value="1">
+                <label class="urgency-check-label" for="urgence">
+                  <strong>Intervention urgente requise</strong> — je souhaite être contacté le plus rapidement possible (service d'urgence disponible <strong>24h/24 et 7j/7</strong>).
+                </label>
+              </div>
+              <button type="submit" class="btn-submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+                Envoyer ma demande de devis
+              </button>
+              <p class="form-privacy">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:inline;vertical-align:middle;margin-right:4px" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                Vos données sont confidentielles et ne sont jamais transmises à des tiers.
+              </p>
+            </form>
+
+            <div class="form-success" id="form-success" role="status" aria-live="polite">
+              <div class="form-success-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="oklch(56% 0.18 148)" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <h3 class="form-success-title">Demande bien reçue !</h3>
+              <p class="form-success-msg">Merci pour votre message. Notre équipe vous recontacte <strong>sous 2 heures</strong> aux coordonnées que vous avez fournies. Pour toute urgence, appelez directement le <a href="tel:+33246915620" style="color:var(--danger);font-weight:700">02 46 91 56 20</a>.</p>
+              <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="sidebar-block">
+            <div class="sidebar-block-title">Urgence ? Appelez directement</div>
+            <a href="tel:+33246915620" class="contact-phone-big">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+              02 46 91 56 20
+            </a>
+            <p class="contact-phone-sub">Service d'urgence disponible 24h/24 &amp; 7j/7</p>
+          </div>
+
+          <div class="sidebar-block">
+            <div class="sidebar-block-title">Informations pratiques</div>
+            <div class="contact-info-row">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-dark)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Horaires</div>
+                <div class="contact-info-value">Lun – Sam : 8h – 20h</div>
+                <div style="font-size:12px;color:var(--danger);font-weight:700;margin-top:2px">Urgences : 24h/24 &amp; 7j/7</div>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-dark)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Zone d'intervention</div>
+                <div class="contact-info-value">Loiret (45) &amp; alentours</div>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-dark)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Devis</div>
+                <div class="contact-info-value">Gratuit &amp; sans engagement</div>
+              </div>
+            </div>
+            <div class="contact-info-row">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="var(--accent-dark)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+              </div>
+              <div>
+                <div class="contact-info-label">Paiement</div>
+                <div class="contact-info-value">CB, espèces, virement</div>
+              </div>
+            </div>
+            <div style="margin-top:16px">
+              <div class="contact-info-label" style="margin-bottom:8px">Villes principales</div>
+              <div class="zone-tags">
+                <span class="zone-tag">Orléans</span>
+                <span class="zone-tag">Montargis</span>
+                <span class="zone-tag">Gien</span>
+                <span class="zone-tag">Pithiviers</span>
+                <span class="zone-tag">Sully-sur-Loire</span>
+                <span class="zone-tag">Châteauneuf</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-certif">
+            <div class="sidebar-certif-icon" aria-hidden="true">🏅</div>
+            <div class="sidebar-certif-text">
+              <strong>Certifié Biocide</strong> — nos techniciens sont habilités et formés aux produits biocides conformément à la réglementation française en vigueur.
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="faq-section">
+        <span class="section-label">Questions fréquentes</span>
+        <h2 class="section-title">Ce que vous vous demandez souvent</h2>
+        <div role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq1-body">
+              Combien de temps après ma demande serai-je recontacté ?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq-body" id="faq1-body">Nous nous engageons à vous rappeler <strong>dans les 2 heures</strong> suivant la réception de votre demande, aux horaires ouvrés (lundi–samedi 8h–20h). Pour toute urgence hors horaires, notre ligne d'astreinte 24h/24 est à votre disposition.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq2-body">
+              Le déplacement pour le diagnostic est-il payant ?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq-body" id="faq2-body">Le devis par téléphone ou via ce formulaire est toujours <strong>gratuit et sans engagement</strong>. Pour un diagnostic sur site, des frais de déplacement peuvent s'appliquer selon la localisation ; ils vous sont communiqués avant toute intervention.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq3-body">
+              Intervenez-vous dans tout le Loiret ?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq-body" id="faq3-body">Oui — nous intervenons dans l'ensemble du département du Loiret (45) : Orléans et son agglomération, Montargis, Gien, Pithiviers, Sully-sur-Loire, Châteauneuf-sur-Loire, et toutes les communes alentour.</div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq4-body">
+              Puis-je obtenir un rapport d'intervention pour mon bailleur ?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+            </button>
+            <div class="faq-body" id="faq4-body">Oui. À l'issue de chaque intervention, nous remettons un <strong>rapport officiel certifié</strong> détaillant les produits utilisés, les zones traitées et les résultats obtenus. Ce document est valable auprès de votre bailleur, de votre assurance ou de tout ERP.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <img src="mpo5f0px-sos-nuisibles-45-logo-v1.png" alt="SOS Nuisibles 45" class="footer-brand-logo">
+        <p class="footer-brand-tagline">Votre expert local en dératisation, désinsectisation et traitement punaises de lit dans le Loiret.</p>
+        <div class="footer-phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          <a href="tel:+33246915620" style="color:var(--accent)">02 46 91 56 20</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Nos services</div>
+        <ul>
+          <li><a href="deratisation.html">Dératisation</a></li>
+          <li><a href="desinsectisation.html">Désinsectisation</a></li>
+          <li><a href="punaises-de-lit.html">Punaises de lit</a></li>
+          <li><a href="contact.html">Devis gratuit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Zones</div>
+        <ul>
+          <li><a href="contact.html">Orléans</a></li>
+          <li><a href="contact.html">Montargis</a></li>
+          <li><a href="contact.html">Gien</a></li>
+          <li><a href="contact.html">Pithiviers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul>
+          <li><a href="contact.html">Formulaire de contact</a></li>
+          <li><a href="tel:+33246915620">Urgence 24h/24</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 SOS Nuisibles 45 — Tous droits réservés</span>
+      <span>Certifié Biocide</span>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const siteNav   = document.getElementById('site-nav');
+    if (navToggle && siteNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = siteNav.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !siteNav.contains(e.target)) {
+          siteNav.classList.remove('open');
+          navToggle.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    const form         = document.getElementById('devis-form');
+    const successPanel = document.getElementById('form-success');
+
+    function showError(fieldId, errId, show) {
+      const field = document.getElementById(fieldId);
+      const msg   = document.getElementById(errId);
+      if (!field || !msg) return;
+      field.classList.toggle('error', show);
+      msg.style.display = show ? 'block' : 'none';
+    }
+
+    ['prenom','nom','telephone','email','adresse','ville','codepostal','message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('input', () => {
+        el.classList.remove('error');
+        const msg = document.getElementById(id + '-err');
+        if (msg) msg.style.display = 'none';
+      });
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      const v = id => document.getElementById(id).value.trim();
+
+      if (!v('prenom'))                                        { showError('prenom','prenom-err',true);         valid=false; } else showError('prenom','prenom-err',false);
+      if (!v('nom'))                                           { showError('nom','nom-err',true);               valid=false; } else showError('nom','nom-err',false);
+      if (!/^[\d\s\+\-\.()]{8,}$/.test(v('telephone')))      { showError('telephone','telephone-err',true);   valid=false; } else showError('telephone','telephone-err',false);
+      const em = v('email');
+      if (em && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em))      { showError('email','email-err',true);           valid=false; } else showError('email','email-err',false);
+      if (!v('adresse'))                                       { showError('adresse','adresse-err',true);       valid=false; } else showError('adresse','adresse-err',false);
+      if (!v('ville'))                                         { showError('ville','ville-err',true);           valid=false; } else showError('ville','ville-err',false);
+      if (!/^\d{5}$/.test(v('codepostal')))                   { showError('codepostal','codepostal-err',true); valid=false; } else showError('codepostal','codepostal-err',false);
+      if (!document.getElementById('service').value)          { showError('service','service-err',true);       valid=false; } else showError('service','service-err',false);
+      if (!v('message'))                                       { showError('message','message-err',true);       valid=false; } else showError('message','message-err',false);
+
+      if (!valid) {
+        const firstErr = form.querySelector('.error');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
+      form.style.display = 'none';
+      successPanel.style.display = 'block';
+    });
+
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

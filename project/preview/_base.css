@@ -1,0 +1,7 @@
+/* Preview-card shared base — neutral chrome, no titles */
+@import url('../colors_and_type.css');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; color: var(--fg); font-family: var(--font-body); }
+body { padding: 20px; min-height: 100%; }
+img { display: block; max-width: 100%; }
+.card-wrap { width: 100%; }

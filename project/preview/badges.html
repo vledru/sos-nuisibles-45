@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;background:#fff}
+  .wrap{padding:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.04em;padding:5px 12px;border-radius:100px}
+  .badge-accent{background:var(--accent-light);color:var(--accent-dark)}
+  .badge-danger{background:oklch(97% 0.015 25);color:var(--danger)}
+  .badge-success{background:oklch(97% 0.015 148);color:var(--success)}
+  .badge-dark{background:oklch(54% 0.20 25 / 0.25);color:oklch(80% 0.12 25);border:1px solid oklch(54% 0.20 25 / 0.40)}
+  .badge-darkok{background:oklch(56% 0.18 148 / 0.20);color:oklch(75% 0.12 148);border:1px solid oklch(56% 0.18 148 / 0.35)}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:oklch(54% 0.20 25 / 0.15);border:1px solid oklch(54% 0.20 25 / 0.40);color:oklch(80% 0.12 25);padding:7px 14px;border-radius:100px;font-family:var(--font-display);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--danger)}
+  .zone{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--fg);box-shadow:0 1px 4px oklch(0% 0 0 / 0.06)}
+  .zone-tag{background:var(--accent-light);color:var(--accent-dark);border-radius:100px;padding:4px 12px;font-family:var(--font-display);font-weight:700;font-size:12px}
+  .lab{flex-basis:100%;font-family:var(--font-display);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+</style></head><body>
+<div class="wrap">
+  <span class="badge badge-accent">Recommandé</span>
+  <span class="badge badge-danger">Urgent</span>
+  <span class="badge badge-success">Disponible</span>
+  <span class="badge badge-dark">En cours</span>
+  <span class="badge badge-darkok">Disponible</span>
+  <span class="pill"><span class="dot"></span>Intervention d'urgence</span>
+  <span class="zone">Orléans</span>
+  <span class="zone">Montargis</span>
+  <span class="zone-tag">Loiret 45</span>
+  <span class="lab">.badge-* · hero pill · .zone-tag (light + dark contexts)</span>
+</div>
+</body></html>

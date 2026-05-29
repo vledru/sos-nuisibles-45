@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css">
+<style>
+  body{padding:0;margin:0}
+  .hero{background:linear-gradient(135deg, oklch(14% 0.018 60) 0%, oklch(20% 0.025 65) 60%, oklch(16% 0.020 62) 100%);padding:36px 32px;position:relative;overflow:hidden;color:#fff}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 90% 30%, oklch(78% 0.19 82 / 0.12) 0%, transparent 55%), radial-gradient(ellipse at 10% 80%, oklch(54% 0.20 25 / 0.08) 0%, transparent 45%);pointer-events:none}
+  .hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(oklch(100% 0 0 / 0.03) 1px, transparent 1px), linear-gradient(90deg, oklch(100% 0 0 / 0.03) 1px, transparent 1px);background-size:32px 32px;pointer-events:none}
+  .inner{position:relative;z-index:1}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:oklch(54% 0.20 25 / 0.15);border:1px solid oklch(54% 0.20 25 / 0.40);color:oklch(80% 0.12 25);padding:7px 14px;border-radius:100px;font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--danger);animation:pulse 1.5s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+  h1{font-family:var(--font-display);font-weight:900;font-size:38px;line-height:1.05;margin-bottom:10px}
+  h1 em{font-style:normal;color:var(--accent)}
+  p{font-size:14px;color:rgba(255,255,255,.7);max-width:380px;line-height:1.6}
+</style></head><body>
+<div class="hero">
+  <div class="inner">
+    <div class="pill"><span class="dot"></span>Intervention d'urgence disponible</div>
+    <h1>Nuisibles dans le <em>Loiret</em> ?<br>On intervient sous 2 heures.</h1>
+    <p>Charbon profond + gradient radial ambre + grille blanche 0.03 alpha. La signature visuelle de la marque.</p>
+  </div>
+</div>
+</body></html>
