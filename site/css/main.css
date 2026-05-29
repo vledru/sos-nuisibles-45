@@ -527,6 +527,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 36px;
 }
 .page-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.page-hero-actions .btn-secondary {
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+.page-hero-actions .btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255,255,255,0.05);
+}
 
 /* ── Nuisible grid ── */
 .nuisible-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
