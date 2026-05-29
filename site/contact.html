@@ -76,28 +76,32 @@
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="nom">Nom <span aria-hidden="true">*</span></label>
-                <input class="form-input" type="text" id="nom" name="nom" placeholder="Jean Martin" required autocomplete="name">
+                <input class="form-input" type="text" id="nom" name="nom" placeholder="Jean Martin" required autocomplete="name" aria-describedby="nom-error">
+                <span class="field-error" id="nom-error" role="alert"></span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="telephone">Téléphone <span aria-hidden="true">*</span></label>
-                <input class="form-input" type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel">
+                <input class="form-input" type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" required autocomplete="tel" aria-describedby="telephone-error">
+                <span class="field-error" id="telephone-error" role="alert"></span>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="email">Email</label>
-                <input class="form-input" type="email" id="email" name="email" placeholder="vous@exemple.fr" autocomplete="email">
+                <input class="form-input" type="email" id="email" name="email" placeholder="vous@exemple.fr" autocomplete="email" aria-describedby="email-error">
+                <span class="field-error" id="email-error" role="alert"></span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="codepostal">Code postal <span aria-hidden="true">*</span></label>
-                <input class="form-input" type="text" id="codepostal" name="codepostal" placeholder="45000" required autocomplete="postal-code">
+                <input class="form-input" type="text" id="codepostal" name="codepostal" placeholder="45000" required autocomplete="postal-code" aria-describedby="codepostal-error">
+                <span class="field-error" id="codepostal-error" role="alert"></span>
               </div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="nuisible">Type de nuisible <span aria-hidden="true">*</span></label>
-              <select class="form-select" id="nuisible" name="nuisible" required>
+              <select class="form-select" id="nuisible" name="nuisible" required aria-describedby="nuisible-error">
                 <option value="" disabled selected>Sélectionnez...</option>
                 <option value="rongeurs">Rongeurs (rats, souris, mulots)</option>
                 <option value="insectes">Insectes (cafards, fourmis)</option>
@@ -105,6 +109,7 @@
                 <option value="punaises">Punaises de lit</option>
                 <option value="autre">Autre / je ne sais pas</option>
               </select>
+              <span class="field-error" id="nuisible-error" role="alert"></span>
             </div>
 
             <div class="form-group">

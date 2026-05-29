@@ -45,11 +45,80 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(s => observer.observe(s));
   }
 
-  // Contact form submission
+  // Contact form validation & submission
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    const rules = {
+      nom:        { required: true, minLen: 2,  msg: 'Veuillez saisir votre nom (2 caractères minimum).' },
+      telephone:  { required: true, pattern: /^[\d\s().+\-]{7,15}$/, msg: 'Numéro de téléphone invalide.' },
+      email:      { required: false, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: 'Adresse e-mail invalide.' },
+      codepostal: { required: true, pattern: /^\d{5}$/, msg: 'Code postal à 5 chiffres requis.' },
+      nuisible:   { required: true, msg: 'Veuillez sélectionner un type de nuisible.' },
+    };
+
+    function validateField(id) {
+      const el    = document.getElementById(id);
+      const rule  = rules[id];
+      const err   = document.getElementById(id + '-error');
+      if (!el || !rule) return true;
+
+      const val = el.value.trim();
+      let msg = '';
+
+      if (rule.required && !val) {
+        msg = rule.msg;
+      } else if (val && rule.minLen && val.length < rule.minLen) {
+        msg = rule.msg;
+      } else if (val && rule.pattern && !rule.pattern.test(val)) {
+        msg = rule.msg;
+      }
+
+      el.classList.toggle('invalid', !!msg);
+      el.classList.toggle('valid', !msg && (rule.required ? !!val : true));
+      if (err) {
+        err.textContent = msg;
+        err.classList.toggle('visible', !!msg);
+      }
+      return !msg;
+    }
+
+    function updateSubmit() {
+      const allValid = Object.keys(rules).every(id => {
+        const el   = document.getElementById(id);
+        const rule = rules[id];
+        if (!el) return true;
+        const val = el.value.trim();
+        if (rule.required && !val) return false;
+        if (val && rule.minLen && val.length < rule.minLen) return false;
+        if (val && rule.pattern && !rule.pattern.test(val)) return false;
+        return true;
+      });
+      submitBtn.disabled = !allValid;
+    }
+
+    // Validate on blur; then live on input/change
+    Object.keys(rules).forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('blur', () => { validateField(id); updateSubmit(); });
+      el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', () => {
+        if (el.classList.contains('invalid') || el.classList.contains('valid')) {
+          validateField(id);
+        }
+        updateSubmit();
+      });
+    });
+
+    // Initial state
+    updateSubmit();
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      const allValid = Object.keys(rules).every(id => validateField(id));
+      updateSubmit();
+      if (!allValid) return;
       const successMsg = document.getElementById('form-success');
       if (successMsg) {
         successMsg.style.display = 'flex';
