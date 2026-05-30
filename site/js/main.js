@@ -114,16 +114,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial state
     updateSubmit();
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const allValid = Object.keys(rules).every(id => validateField(id));
       updateSubmit();
       if (!allValid) return;
-      const successMsg = document.getElementById('form-success');
-      if (successMsg) {
-        successMsg.style.display = 'flex';
-        contactForm.style.display = 'none';
-        successMsg.scrollIntoView({ block: 'nearest' });
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+
+      try {
+        const res = await fetch('https://formspree.io/f/mwvzzjln', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm),
+        });
+
+        if (res.ok) {
+          const successMsg = document.getElementById('form-success');
+          if (successMsg) {
+            successMsg.style.display = 'flex';
+            contactForm.style.display = 'none';
+            successMsg.scrollIntoView({ block: 'nearest' });
+          }
+        } else {
+          submitBtn.textContent = 'Erreur — réessayez';
+          submitBtn.disabled = false;
+        }
+      } catch {
+        submitBtn.textContent = 'Erreur réseau — réessayez';
+        submitBtn.disabled = false;
       }
     });
   }
