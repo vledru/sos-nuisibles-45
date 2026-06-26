@@ -19,6 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Google Ads — clic sur numéro de téléphone (toutes les pages)
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18223533947/zZcTCN-f-8UcEPue1PFD',
+          'value': 15.0,
+          'currency': 'EUR'
+        });
+      }
+    });
+  });
+
   // Animate numbers on scroll
   const stats = document.querySelectorAll('[data-count]');
   if (stats.length) {
@@ -131,6 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (res.ok) {
+          if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-18223533947/jbfZCJTK-cUcEPue1PFD',
+              'value': 15.0,
+              'currency': 'EUR'
+            });
+          }
           const successMsg = document.getElementById('form-success');
           if (successMsg) {
             successMsg.style.display = 'flex';
